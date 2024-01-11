@@ -1,4 +1,5 @@
 import re
+import gzip
 import numpy as np
 import pandas as pd
 from typing import Optional, List
@@ -20,7 +21,7 @@ def load_raw_data_to_df(frequency: Optional[int] = 600) -> pd.DataFrame:
 	# Loads data from log file to Pandas df
 	print(f"Loading and aggregating index at {frequency}...")
 	co2_list, rh_list, temp_list = [], [], []
-	with open("data/scd30Log.log", mode='r', encoding='UTF-8') as f:
+	with gzip.open("data/scd30Log.log.gz", mode='rt', encoding='UTF-8') as f:
 	    for line in f:
 	        if line.startswith("INFO:root:CO2"):
 	            fields = (
