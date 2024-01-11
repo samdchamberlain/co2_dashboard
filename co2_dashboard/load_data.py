@@ -50,3 +50,7 @@ def load_raw_data_to_df(frequency: Optional[int] = 600) -> pd.DataFrame:
 	agg_df = df.groupby('timestamp')[['co2', 'rh', 'temp']].mean().reset_index()
 	print(f"Data aggregated to dataframe of len {agg_df.shape[0]}")
 	return agg_df
+
+
+if __name__ == "__main__":
+	load_raw_data_to_df()
