@@ -11,12 +11,13 @@ Follow these steps. You need `pyenv` and `poetry` installed within a specific Py
   6. Now you can install the env with `poetry install`
 
 # Run the dashboard locally
+
   - `poetry run streamlit run app.py`
 
 If it doesn't pop up automatically in Chrome, copy paste the `Local URL:` from Terminal into a Chrome tab
 
-# Access the Jupyter dev notebook
-You can access the notebook used in dev with the following command
-  - `poetry run jupyter lab`
+# Directly re-run the data extraction
 
-This will activate a Jupyter Notebook environment where you can run commands in the attached `testing_notebook.ipynb`
+From the base directory the following commands on Terminal will get you to the right path and execute.
+  1. `cd co2_dashboard`
+  2. `poetry run python load_data.py`
